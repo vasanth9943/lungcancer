@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %} Login Page {% endblock %}
+{% block content %}
+<style>
+.abt{
+    padding: 20px;
+    margin-bottom:70px;
+}
+.box{
+    background-color: skyblue;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 30px;
+    transition: .5s;
+    margin-bottom: 50px;
+}
+.box:hover{
+    transform:translateY(-10px);
+    cursor: pointer;
+}
+p{
+    font-size: 20px;
+}
+
+</style>
+
+<div class="abt">
+    
+    <div class="box">
+        <h1>Lung Cancer Detection </h1>
+        <p>Lung cancer is one of the most common and deadly forms of cancer, primarily caused by smoking, exposure to harmful pollutants, and genetic factors. It affects millions of people worldwide, often showing symptoms like persistent cough, chest pain, difficulty breathing, and unexplained weight loss in its later stages. Early detection through screenings like CT scans and chest X-rays can significantly improve survival rates, making awareness and regular check-ups crucial. Despite advancements in medical treatments such as chemotherapy, immunotherapy, and targeted therapies, prevention remains the best approach by avoiding smoking and minimizing exposure to hazardous substances.
+
+            Raising awareness about lung cancer is vital to encourage healthy lifestyle choices and early diagnosis. Public campaigns, educational programs, and community initiatives play a crucial role in informing people about risk factors, symptoms, and treatment options. Supporting research and funding for better treatments can also improve patient outcomes. Additionally, offering emotional and psychological support to patients and their families can help them navigate the challenges of the disease. By spreading awareness, encouraging regular health check-ups, and advocating for smoke-free environments, we can work towards reducing the impact of lung cancer globally.</p></div>
+</div>
+
+
+{% endblock %}
