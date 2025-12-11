@@ -1,0 +1,101 @@
+
+
+ {% extends "base.html" %}
+
+ {% block title %} Upload image {% endblock %}
+ 
+ {% block content %}
+ <style>
+     body {
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-start; 
+         align-items: center;
+         height: 100vh;
+         margin: 0;
+         padding-top: 50px; 
+     }
+ 
+     nav {
+         position: fixed;
+         top: 0;
+         left: 0; 
+         width: 100%;
+         background-color: #189AB4;
+         padding: 10px;
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+         z-index: 1000;
+         text-align: center;
+     }
+ 
+     nav a {
+         color: white;
+         margin: 0 15px;
+         text-decoration: none;
+         font-size: 18px;
+     }
+ 
+     nav a:hover {
+         text-decoration: underline;
+     }
+ 
+     .content {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 100%;
+         height: calc(100vh - 50px); 
+     }
+ 
+     .image {
+         margin: auto;
+         width: fit-content;
+         padding: 40px;
+         border-radius: 50px;
+         text-align: center;
+         border: 2px solid aquamarine;
+         background-color: rgba(0, 0, 0, 0.5);
+     }
+ 
+     .image h1 {
+         margin-bottom: 20px;
+         color: white;
+     }
+ 
+     .image button {
+         padding: 15px 30px;
+         margin: 10px;
+         color: white;
+         transition: 0.5s;
+         border: none;
+         background: #189AB4;
+         border-radius: 10px;
+         cursor: pointer;
+     }
+ 
+     .image input[type="file"] {
+         border-radius: 0;
+         color: white;
+         text-decoration: none;
+         border: 1px solid beige;
+         display: inline-block;
+     }
+ 
+     .image button:hover {
+         transform: translateY(-7px);
+     }
+ 
+   
+ </style>
+ 
+ <div class="content">
+     <div class="image">
+         <h1>Upload an Image for Classification</h1>
+         <form action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data">
+             <button><input type="file" name="file" accept="image/*"></button>
+             <button><input type="submit" value="Predict"></button>
+         </form>
+     </div>
+ </div>
+ {% endblock %}
+ 
