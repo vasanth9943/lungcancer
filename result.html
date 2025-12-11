@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}Result{% endblock %}
+
+{% block content %}
+<style>
+    .pred {
+        text-align: center;
+        margin-top: 90px;
+    }
+    .pred h1 {
+        font-size: 40px;
+    }
+    .pred p {
+        font-size: 30px;
+    }
+    .pred p strong {
+        color: blue;
+    }
+    .percentage {
+        font-size: 35px;
+        color: darkgreen;
+        margin: 20px 0;
+    }
+    .risk {
+        font-size: 35px;
+        font-weight: bold;
+        margin: 20px 0;
+    }
+    .risk.high {
+        color: red;
+    }
+    .risk.medium {
+        color: orange;
+    }
+    .risk.low {
+        color: green;
+    }
+    .pred .btn {
+        padding: 10px;
+        margin: 10px;
+        background-color: skyblue;
+        color: white;
+        border-radius: 20px;
+        transition: .5s;
+        border: none;
+    }
+    .btn a {
+        text-decoration: none;
+        color: black;
+    }
+    .btn:hover {
+        transform: translateY(-7px);
+    }
+</style>
+
+<div class="pred">
+    <h1>Prediction Result</h1>
+    <p>The uploaded image is classified as: <strong>{{ prediction }}</strong></p>
+
+    
+    <div class="btn">
+        <a href="/">Upload another image</a>
+    </div>
+</div>
+{% endblock %}
